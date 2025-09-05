@@ -36,3 +36,13 @@ dist/
 *.wasm
 *.obj
 *.o
+
+bindings/
+src/
+Cargo.toml
+Package.swift
+binding.gyp
+Makefile
+pyproject.toml
+setup.py
+
