@@ -150,7 +150,7 @@
     },
     "comment_content": {
       "type": "PATTERN",
-      "value": "[^#]*#*"
+      "value": "[^#]*"
     }
   },
   "extras": [

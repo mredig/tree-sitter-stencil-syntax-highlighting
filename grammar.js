@@ -43,6 +43,6 @@ module.exports = grammar({
       '#}'
     ),
 
-    comment_content: $ => /[^#]*#*/,
+    comment_content: $ => /[^#]*/,
   }
 });

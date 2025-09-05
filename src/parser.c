@@ -300,24 +300,15 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 22:
       ACCEPT_TOKEN(sym_comment_content);
-      if (lookahead == '#') ADVANCE(24);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') ADVANCE(22);
-      if (lookahead != 0) ADVANCE(25);
+      if (lookahead != 0 &&
+          lookahead != '#') ADVANCE(23);
       END_STATE();
     case 23:
       ACCEPT_TOKEN(sym_comment_content);
-      if (lookahead == '#') ADVANCE(23);
-      END_STATE();
-    case 24:
-      ACCEPT_TOKEN(sym_comment_content);
-      if (lookahead == '#') ADVANCE(23);
-      if (lookahead == '}') ADVANCE(21);
-      END_STATE();
-    case 25:
-      ACCEPT_TOKEN(sym_comment_content);
-      if (lookahead == '#') ADVANCE(23);
-      if (lookahead != 0) ADVANCE(25);
+      if (lookahead != 0 &&
+          lookahead != '#') ADVANCE(23);
       END_STATE();
     default:
       return false;
@@ -591,7 +582,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [67] = {.entry = {.count = 1, .reusable = false}}, SHIFT(25),
   [69] = {.entry = {.count = 1, .reusable = false}}, SHIFT(16),
   [71] = {.entry = {.count = 1, .reusable = false}}, SHIFT(8),
-  [73] = {.entry = {.count = 1, .reusable = false}}, SHIFT(19),
+  [73] = {.entry = {.count = 1, .reusable = true}}, SHIFT(19),
   [75] = {.entry = {.count = 1, .reusable = true}}, SHIFT(24),
   [77] = {.entry = {.count = 1, .reusable = false}}, SHIFT(10),
   [79] = {.entry = {.count = 1, .reusable = true}}, SHIFT(20),
