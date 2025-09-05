@@ -38,12 +38,8 @@ dist/
 *.o
 
 bindings/
-!src/parser.c
-src/tree_sitter
 Cargo.toml
 Package.swift
-binding.gyp
 Makefile
 pyproject.toml
 setup.py
-
