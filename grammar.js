@@ -12,7 +12,7 @@ module.exports = grammar({
     ),
 
     // Plain text content
-    text: $ => /[^{]+|{[^{%#]/,
+    text: $ => /[^{]+/,
 
     // {{ expression }}
     expression: $ => seq(
